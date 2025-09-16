@@ -12,7 +12,7 @@ async def generate_pdf(html: str = Form(...), file: str = 'saida'):
     """
     pdf_bytes = html_to_pdf(html)
     return StreamingResponse(BytesIO(pdf_bytes), media_type="application/pdf", headers={
-        "Content-Disposition": "attachment; filename={file}.pdf"
+        'Content-Disposition': 'attachment; filename='+file+'.pdf'
     })
 
 @app.get("/")

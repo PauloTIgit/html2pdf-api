@@ -11,12 +11,17 @@ os.makedirs(GENERATED_DIR, exist_ok=True)
 
 @app.post("/generate_pdf")
 async def generate_pdf(html: str = Form(...)):
+    pdf_content = html_to_pdf(html)
     file_id = str(uuid.uuid4())
     file_path = f"{GENERATED_DIR}/{file_id}.pdf"
-    html_to_pdf(html, file_path)
+
+    with open(file_path, "wb") as f:
+        f.write(pdf_content)
+
     return JSONResponse(content={
         "download_url": f"http://44.222.249.128:8082/download/{file_id}.pdf"
     })
+
 
 from fastapi.responses import FileResponse
 

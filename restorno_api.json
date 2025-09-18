@@ -1,0 +1,41 @@
+[
+  {
+    "orcamentos": [
+      {
+        "json": {
+          "row_number": 2,
+          "QUANTIDADE DE TRILHOS:": 1,
+          "MODELO": "Wave 2.4",
+          "QUANTIDADE DE MOTORES:": 1,
+          "COMPRIMENTO DO TRILHO:": 4.8,
+          "Abertura": "Central",
+          "Rodizio": "Wave",
+          "Quantidade de rodizio ": "",
+          "EMISSOR (QTD)": 1,
+          "SUPORTE DE INSTALAÇÃO": "Teto",
+          "Custo bruto": "3.148,96",
+          "Desconto": "944,69",
+          "Custo total": "2.204,27"
+        }
+      },
+      {
+        "json": {
+          "row_number": 3,
+          "QUANTIDADE DE TRILHOS:": 1,
+          "MODELO": "Wave 2.4",
+          "QUANTIDADE DE MOTORES:": 1,
+          "COMPRIMENTO DO TRILHO:": 4.8,
+          "Abertura": "Central",
+          "Rodizio": "Wave",
+          "Quantidade de rodizio ": 14399999999999900,
+          "EMISSOR (QTD)": 1,
+          "SUPORTE DE INSTALAÇÃO": "Teto",
+          "Custo bruto": "3.148,96",
+          "Desconto": "944,69",
+          "Custo total": "2.204,27"
+        }
+      }
+    ],
+    "total_orcamento": "4.408,54"
+  }
+]

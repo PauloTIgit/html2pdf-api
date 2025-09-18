@@ -28,7 +28,7 @@
       padding-bottom: 10px;
     }
 
-    .dados-cliente td p {
+    .dados-cliente div p {
       font-size: 10px;
       padding: 0;
       margin: 0;
@@ -161,48 +161,46 @@
     </header>
 
     <div class="dados-cliente">
-      <table style="width:100%; border-collapse:collapse; border:none; margin-top: 1rem;">
-        <tbody>
-          <tr>
-            <td style="border:1px solid #d1d5db; padding:4px 6px; width:25%;">
-              <p>Cliente:</p>
-              <strong>54089877 /0001</strong>
-            </td>
-            <td style="border:1px solid #d1d5db; padding:4px 6px;" colspan="3">
-              <p>Nome/Razão Social:</p>
-              <strong>AVEUGLE AMBIENTACOES LTDA</strong>
-            </td>
-          </tr>
-          <tr>
-            <td style="border:1px solid #d1d5db; padding:4px 6px;" colspan="2">
-              <p>Endereço:</p>
-              <strong> AV DOS HOLANDESES/ CONS.HILTON RODRIGUES SALA NUMERO 100 - CALHAU</strong>
-            </td>
-            <td style="border:1px solid #d1d5db; padding:4px 6px;">
-              <p>Cidade:</p>
-              <strong> SAO LUIS</strong>
-            </td>
-            <td style="border:1px solid #d1d5db; padding:4px 6px; width:15%;">
-              <p>UF:</p>
-              <strong> MA</strong>
-            </td>
-          </tr>
-          <tr>
-            <td style="border:1px solid #d1d5db; padding:4px 6px;">
-              <p>Telefone:</p>
-              <strong> 98-98166-7550</strong>
-            </td>
-            <td style="border:1px solid #d1d5db; padding:4px 6px;">
-              <p>Contato:</p>
-              <strong></strong>
-            </td>
-            <td style="border:1px solid #d1d5db; padding:4px 6px;" colspan="2">
-              <p>Representante:</p>
-              <strong> 019 - GUSTAVO PEREIRA</strong>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="display:grid; grid-template-columns: 6fr 2fr 1fr; border:1px solid #d1d5db;">
+        <!-- Linha 1 -->
+        <div style="border:1px solid #d1d5db; padding:4px 6px;">
+          <p>Cliente:</p>
+          <strong> 54089877 /0001</strong>
+        </div>
+        <div style="width: 143%; border:1px solid #d1d5db; padding:4px 6px;">
+          <p>Nome/Razão Social:</p>
+          <strong> AVEUGLE AMBIENTACOES LTDA</strong>
+        </div>
+        <div></div>
+
+        <!-- Linha 2 -->
+        <div style="border:1px solid #d1d5db; padding:4px 6px;">
+          <p>Endereço:</p>
+          <strong> AV DOS HOLANDESES/ CONS.HILTON RODRIGUES SALA NUMERO 100 - CALHAU</strong>
+        </div>
+        <div style="border:1px solid #d1d5db; padding:4px 6px;">
+          <p>Cidade:</p>
+          <strong> SAO LUIS</strong>
+        </div>
+        <div style="border:1px solid #d1d5db; padding:4px 6px;">
+          <p>UF:</p>
+          <strong> MA</strong>
+        </div>
+
+        <!-- Linha 3 -->
+        <div style="border:1px solid #d1d5db; padding:4px 6px;">
+          <p>Telefone:</p>
+          <strong> 98-98166-7550</strong>
+        </div>
+        <div style="border:1px solid #d1d5db; padding:4px 6px;">
+          <p>Contato:</p>
+          <strong></strong>
+        </div>
+        <div style="border:1px solid #d1d5db; padding:4px 6px;">
+          <p>Representante:</p>
+          <strong> 019 - GUSTAVO PEREIRA</strong>
+        </div>
+      </div>
     </div>
 
     <div class="section">
@@ -220,6 +218,15 @@
             </tr>
           </thead>
           <tbody>
+            {{
+            $json.orcamentos.forEach((orc, index) => {
+            `
+            <tr>
+              <td>${index + 1}</td>
+            </tr>
+            `
+            })
+            }}
             <tr>
               <td>01</td>
               <td>
@@ -234,35 +241,6 @@
               <td>UN</td>
               <td class="right">R$ 1.665,00</td>
               <td class="right">R$ 1.665,00</td>
-            </tr>
-            <tr>
-              <td>02</td>
-              <td>
-                TRILHO MOTORIZADO P/ CORTINA MODELO MOVIMENTO (NOVO) - TMC-6<br>
-                L x A : 3,030 x 1,000 MT - Lado Com.: Direito - Abertura: Central<br>
-                CARRINHO P/ TRILHO VERTICAL MOTORIZADA<br>
-                MOTOR WIFI/ZIGBEE (TRILHO)<br>
-                <strong>OBS:</strong> ABERT. CENTRAL, 22 CARRINHOS.
-              </td>
-              <td>1</td>
-              <td>UN</td>
-              <td class="right">R$ 972,00</td>
-              <td class="right">R$ 972,00</td>
-            </tr>
-            <tr>
-              <td>03</td>
-              <td>
-                TRILHO MOTORIZADO P/ CORTINA MODELO MOVIMENTO (NOVO) - TMC-6<br>
-                L x A : 2,650 x 1,000 MT - Lado Com.: Direito - Abertura: A<br>
-                CARRINHO P/ TRILHO VERTICAL MOTORIZADA<br>
-                EMISSOR 15 CANAIS WIFI E ZIGBEE BRANCO<br>
-                MOTOR WIFI/ZIGBEE (TRILHO)<br>
-                <strong>OBS:</strong> ABERT. LATERAL, 18 CARRINHOS.
-              </td>
-              <td>1</td>
-              <td>UN</td>
-              <td class="right">R$ 1.016,00</td>
-              <td class="right">R$ 1.016,00</td>
             </tr>
           </tbody>
         </table>
